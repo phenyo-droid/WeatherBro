@@ -1,66 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Weather app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeatherBro | Weather App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="app-header">
+    <div class="logo">
+      <img src="./assets/images/weather-icon.png" alt="logo" />
+      <h1>WeatherBro</h1>
+    </div>
+    <button id="unitToggle" class="unit-btn">°C / °F</button>
+  </header>
 
-  Units
+  <main class="container">
+    <h2 class="tagline">How’s the sky looking today?</h2>
 
-  Switch to Imperial/Metric
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input id="searchInput" type="text" placeholder="Search for a place..." />
+      <button id="searchButton" class="search-btn">Search</button>
+    </div>
 
-  Temperature
+    <section class="weather-info">
+      <!-- Current Weather Card -->
+      <div class="current-weather">
+        <div class="location">
+          <h3 id="cityName">Berlin, Germany</h3>
+          <p id="date">Tuesday, Aug 5, 2025</p>
+        </div>
 
-  Celsius (°C)
-  Fahrenheit (°F)
+        <div class="temp-icon">
+          <img id="weatherIcon" src="./assets/images/sun.png" alt="Weather icon" />
+          <h1 id="temperature">68°</h1>
+        </div>
+      </div>
 
-  Wind Speed
+      <!-- Weather Details -->
+      <div class="details">
+        <div class="detail-box">
+          <p>Feels Like</p>
+          <h4 id="feelsLike">64°</h4>
+        </div>
+        <div class="detail-box">
+          <p>Humidity</p>
+          <h4 id="humidity">46%</h4>
+        </div>
+        <div class="detail-box">
+          <p>Wind</p>
+          <h4 id="wind">9 mph</h4>
+        </div>
+        <div class="detail-box">
+          <p>Precipitation</p>
+          <h4 id="precipitation">0 in</h4>
+        </div>
+      </div>
 
-  km/h
-  mph
+      <!-- Daily Forecast -->
+      <section class="daily">
+        <h3>Daily forecast</h3>
+        <div id="dailyList" class="forecast-grid">
+          <!-- JS will inject 5-day forecast here -->
+        </div>
+      </section>
 
-  Precipitation
+      <!-- Hourly Forecast -->
+      <section class="hourly">
+        <h3>Hourly forecast</h3>
+        <div id="hourlyList" class="forecast-grid">
+          <!-- JS will inject hourly forecast here -->
+        </div>
+      </section>
+    </section>
+  </main>
 
-  Millimeters (mm)
-  Inches (in)
+  <footer class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name</a>.</p>
+  </footer>
 
-  How's the sky looking today?
-
-  Search for a city, e.g., New York
-  Search
-
-  Feels like
-  <!-- Insert temperature here -->
-
-  Humidity
-  <!-- Insert humidity here -->
-
-  Wind
-  <!-- Insert wind here -->   
-  
-  Precipitation
-  <!-- Insert precipitation here -->
-
-  Daily forecast
-  <!-- Insert daily forecast for the next 7 days here -->
-
-  Hourly forecast
-  <!-- Insert hourly forecast for the selected day here -->
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <script src="script.js"></script>
 </body>
 </html>
